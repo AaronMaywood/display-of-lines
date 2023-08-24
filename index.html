@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+	<p id="words"><!-- このなかにセリフを表示 --></p>
+	<script>
+		const p = document.querySelector('#words')
+		let message = 'hello';
+		let index = 1;
+		let intervalId = setInterval(function(){
+			p.innerHTML = message.slice(0,index);
+			index++;
+			if(index > message.length){
+				clearInterval( intervalId );
+			}
+		}, 300)
+	</script>
+</body>
+</html>
